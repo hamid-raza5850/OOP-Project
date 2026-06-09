@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 class Board;
-enum color{white=1,black};
+enum color { white = 1, black };
 
 class Piece {
 protected:
@@ -17,16 +17,16 @@ public:
 	int getcol();
 	color getcolor();
 	bool isAlive();
-	void setposition(int r,int c);
-	virtual bool isValidMove(int row,int col,Board* b) = 0;
+	void setposition(int r, int c);
+	virtual bool isValidMove(int row, int col, Board* b) = 0;
 };
 
-class Rook:public Piece {
+class Rook :public Piece {
 public:
 	Rook();
 	Rook(color co, int r, int c, bool a);
 	bool isValidMove(int row, int col, Board* b);
-	
+
 };
 
 class Pawn :public Piece {
@@ -35,20 +35,20 @@ public:
 	bool isValidMove(int row, int col, Board* b);
 };
 
-class Bishap:public Piece {
+class Bishap :public Piece {
 public:
 	Bishap();
 	Bishap(color co, int r, int c, bool a);
 	bool isValidMove(int row, int col, Board* b);
 };
 
-class Knight:public Piece {
+class Knight :public Piece {
 public:
 	Knight(color co, int r, int c, bool a);
 	bool isValidMove(int row, int col, Board* b);
 };
 
-class Queen:public Piece {
+class Queen :public Piece {
 public:
 	Queen(color co, int r, int c, bool a);
 	bool isValidMove(int row, int col, Board* b);
